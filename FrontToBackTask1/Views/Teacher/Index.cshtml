@@ -1,0 +1,30 @@
+﻿@using FrontToBackTask1.DataAccessLayer.Entities;
+
+
+@model List<Teacher>;
+
+
+<!-- Basic Bootstrap Table -->
+<div class="card mt-20 mt-lg-5">
+    <h5 class="card-header">TReachers Table</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Groups</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                <tr>
+                    @foreach (var item in Model)
+                    {
+                        <td>@item.Name</td>
+                        <td>@item.Name</td>
+                    };
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
