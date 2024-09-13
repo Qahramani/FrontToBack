@@ -5,5 +5,6 @@ namespace FrontToBackTask1.DataAccessLayer.Entities;
 public class Teacher : BaseEntity
 {
     public string Name { get; set; }
-    public ICollection<TeacherGroup> TeacherGroups { get; set; } = new List<TeacherGroup>(); 
+    public List<Student> Students { get; set; } = new List<Student>();
+
 }

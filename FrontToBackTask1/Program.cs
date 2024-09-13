@@ -19,7 +19,7 @@ namespace FrontToBackTask1
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>  endpoints.MapControllerRoute("default", "{controller=Teacher}/{action=index}/{id?}"));
+            app.UseEndpoints(endpoints =>  endpoints.MapControllerRoute("default", "{controller=Home}/{action=index}/{id?}"));
 
 
             app.Run();

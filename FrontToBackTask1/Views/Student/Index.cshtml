@@ -1,0 +1,30 @@
+﻿
+@model List<Student>;
+<!-- Basic Bootstrap Table -->
+<div class="card mt-20 mt-lg-5">
+    <h5 class="card-header">TReachers Table</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Teacher</th>
+
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@student.Id</td>
+                        <td>@student.Name</td>
+                        <td>@student.Teacher.Name</td>
+                        
+                    </tr>
+                };
+
+            </tbody>
+        </table>
+    </div>
+</div>

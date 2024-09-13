@@ -1,9 +1,5 @@
-﻿@using FrontToBackTask1.DataAccessLayer.Entities;
-
-
+﻿
 @model List<Teacher>;
-
-
 <!-- Basic Bootstrap Table -->
 <div class="card mt-20 mt-lg-5">
     <h5 class="card-header">TReachers Table</h5>
@@ -11,19 +7,30 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Name</th>
-                    <th>Groups</th>
+                    <th>Students</th>
+
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-                <tr>
-                    @foreach (var item in Model)
-                    {
-                        <td>@item.Name</td>
-                        <td>@item.Name</td>
-                    };
+                @foreach (var teacher in Model)
+                {
+                    var students = teacher.Students;
+                    <tr>
+                        <td>@teacher.Id</td>
+                        <td>@teacher.Name</td>
+                        <td @* rowspan="@students.Count" *@>
+                            @foreach (var s in students)
+                            {
+                                <ul>
+                                    <li>@s.Name</li>
+                                </ul>
+                            }
+                        </td>
+                    </tr>
+                };
 
-                </tr>
             </tbody>
         </table>
     </div>

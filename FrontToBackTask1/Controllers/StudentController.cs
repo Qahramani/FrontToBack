@@ -1,21 +1,25 @@
 ﻿using FrontToBackTask1.DataAccessLayer.Context;
+using FrontToBackTask1.DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FrontToBackTask1.Controllers
 {
-    public class TeacherController : Controller
+    public class StudentController : Controller
     {
+
         private readonly AppDbContext _dbContext;
-        public TeacherController(AppDbContext dbContext)
+
+        public StudentController(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
-            var teachers = _dbContext.Teachers.Include(x => x.Students).ToList();
-            return View(teachers);
+            List<Student> students = _dbContext.Students.Include(x => x.Teacher).ToList();
+
+            return View(students);
         }
     }
 }
